@@ -4,5 +4,8 @@
 # Backup files
 *~
 
+# Installed packages
+elpa
+
 # Packaging
 .cask
