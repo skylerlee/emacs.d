@@ -1,4 +1,16 @@
-;;; emacs config entry
+;;; emacs config
+;;
+;; Copyright (C) 2016, Skyler.
+;; MIT License.
+
+;; Const definitions
+(defconst varan-minreq-version "24.0" "Minimal emacs version required.")
+
+;; Check version compatibility
+(when (version< emacs-version varan-minreq-version)
+  (error (concat "Require emacs version %s or above. "
+                 "Your version is %s.")
+         varan-minreq-version emacs-version))
 
 (require 'package)
 (add-to-list 'package-archives
