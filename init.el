@@ -12,6 +12,13 @@
                  "Your version is %s.")
          varan-minreq-version emacs-version))
 
+;; Init core module
+(defvar varan-core-path (concat (file-name-directory load-file-name)
+                                "core"))
+(add-to-list 'load-path varan-core-path)
+(require 'varan-core)
+
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
