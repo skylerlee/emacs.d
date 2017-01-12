@@ -5,4 +5,8 @@
 
 (require 'varan-gui)
 
+;; Set custom file path
+(setq custom-file (concat varan-core-directory
+                          "varan-user.el"))
+
 (provide 'varan-core)
