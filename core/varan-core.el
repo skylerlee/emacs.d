@@ -4,8 +4,9 @@
 ;; MIT License.
 
 (require 'varan-gui)
+(require 'varan-packages)
 
-;; Set custom file path
+;; Load custom file
 (setq custom-file (concat varan-core-directory
                           "varan-user.el"))
 (load custom-file)
