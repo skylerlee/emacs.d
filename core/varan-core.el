@@ -8,5 +8,6 @@
 ;; Set custom file path
 (setq custom-file (concat varan-core-directory
                           "varan-user.el"))
+(load custom-file)
 
 (provide 'varan-core)
