@@ -20,7 +20,7 @@
          varan-minreq-version emacs-version))
 
 ;; Load core module
-(defvar varan-core-path (concat (file-name-directory load-file-name)
-                                "core"))
-(add-to-list 'load-path varan-core-path)
+(defvar varan-core-directory (concat (file-name-directory load-file-name)
+                                     "core/"))
+(add-to-list 'load-path varan-core-directory)
 (require 'varan-core)
