@@ -3,14 +3,10 @@
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
 
+;; Prevent package auto initialization
+;; (package-initialize)
+
 ;; Const definitions
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (defconst varan-minreq-version "24.0" "Minimal emacs version required.")
 
 ;; Check version compatibility
