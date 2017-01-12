@@ -1,4 +1,4 @@
-;;; varan-packages.el -- emacs dependent packages
+;;; varan-package.el -- emacs core package configurations
 ;;
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
@@ -9,4 +9,4 @@
              '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
-(provide 'varan-packages)
+(provide 'varan-package)
