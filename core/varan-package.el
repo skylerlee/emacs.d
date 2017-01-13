@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
 
-;; Add package archives
+;; Initialize package manager
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
