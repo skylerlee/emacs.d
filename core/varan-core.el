@@ -7,8 +7,8 @@
 (require 'varan-package)
 
 ;; Load custom file
-(setq custom-file (concat varan-core-directory
-                          "varan-user.el"))
+(setq custom-file (expand-file-name "varan-user.el"
+                                    varan-core-directory))
 (load custom-file)
 
 (provide 'varan-core)
