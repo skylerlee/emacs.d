@@ -20,4 +20,5 @@
   (expand-file-name (concat (file-name-directory load-file-name)
                             "core/")))
 (add-to-list 'load-path varan-core-directory)
+
 (require 'varan-core)
