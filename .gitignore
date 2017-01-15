@@ -9,3 +9,6 @@ elpa
 
 # Packaging
 .cask
+
+# Editor history
+smex-items
