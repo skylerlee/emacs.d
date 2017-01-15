@@ -4,6 +4,7 @@
 ;; MIT License.
 
 (require 'varan-gui)
+(require 'varan-editor)
 (require 'varan-package)
 
 ;; Load custom file
