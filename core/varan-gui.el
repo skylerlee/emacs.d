@@ -3,7 +3,10 @@
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
 
-;; Custom emacs gui
+;; Disable the toolbar
 (tool-bar-mode -1)
+
+;; Turn off the bell
+(setq ring-bell-function 'ignore)
 
 (provide 'varan-gui)
