@@ -10,5 +10,8 @@ elpa
 # Packaging
 .cask
 
+# User dir
+user
+
 # Editor history
 smex-items

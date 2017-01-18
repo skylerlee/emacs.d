@@ -9,8 +9,8 @@
 
 ;; Load custom file
 (setq custom-file
-      (expand-file-name (concat varan-core-directory
-                                "varan-user.el")))
+      (expand-file-name (concat varan-root-directory
+                                "user/varan-custom.el")))
 (load custom-file)
 
 (provide 'varan-core)
