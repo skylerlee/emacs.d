@@ -15,10 +15,13 @@
                  "Your version is %s.")
          varan-minreq-version emacs-version))
 
+;; Define root directory
+(defvar varan-root-directory
+  (file-name-directory load-file-name))
+
 ;; Load core module
 (defvar varan-core-directory
-  (expand-file-name (concat (file-name-directory load-file-name)
-                            "core/")))
+  (expand-file-name (concat varan-root-directory "core/")))
 (add-to-list 'load-path varan-core-directory)
 
 (require 'varan-core)
