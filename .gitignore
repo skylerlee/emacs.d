@@ -10,8 +10,9 @@ elpa
 # Packaging
 .cask
 
-# User dir
-user
+# User files
+user/*
+!user/.gitkeep
 
 # Editor history
 smex-items
