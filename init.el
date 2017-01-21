@@ -32,3 +32,6 @@
 ;; Load core module
 (add-to-list 'load-path varan-core-directory)
 (require 'varan-core)
+
+;; Load user custom file
+(load custom-file)

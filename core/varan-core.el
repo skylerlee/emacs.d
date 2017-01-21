@@ -6,11 +6,6 @@
 (require 'varan-gui)
 (require 'varan-editor)
 (require 'varan-package)
-
-;; Load custom file
-(setq custom-file
-      (expand-file-name (concat varan-root-directory
-                                "user/varan-custom.el")))
-(load custom-file)
+(require 'varan-user)
 
 (provide 'varan-core)
