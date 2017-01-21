@@ -19,9 +19,16 @@
 (defvar varan-root-directory
   (file-name-directory load-file-name))
 
-;; Load core module
+;; Define top level directories
 (defvar varan-core-directory
   (expand-file-name (concat varan-root-directory "core/")))
-(add-to-list 'load-path varan-core-directory)
 
+(defvar varan-templates-directory
+  (expand-file-name (concat varan-root-directory "templates/")))
+
+(defvar varan-user-directory
+  (expand-file-name (concat varan-root-directory "user/")))
+
+;; Load core module
+(add-to-list 'load-path varan-core-directory)
 (require 'varan-core)
