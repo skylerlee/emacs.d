@@ -11,6 +11,9 @@
 (defvar varan-core-directory
   (expand-file-name (concat varan-root-directory "core/")))
 
+(defvar varan-settings-directory
+  (expand-file-name (concat varan-root-directory "settings/")))
+
 (defvar varan-templates-directory
   (expand-file-name (concat varan-root-directory "templates/")))
 
