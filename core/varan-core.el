@@ -6,6 +6,7 @@
 (require 'varan-gui)
 (require 'varan-editor)
 (require 'varan-package)
+(require 'varan-settings)
 (require 'varan-user)
 
 (provide 'varan-core)
