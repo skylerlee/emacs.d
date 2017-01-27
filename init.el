@@ -15,19 +15,9 @@
                  "Your version is %s.")
          varan-minreq-version emacs-version))
 
-;; Define root directory
-(defvar varan-root-directory
-  (file-name-directory load-file-name))
-
-;; Define top level directories
-(defvar varan-core-directory
-  (expand-file-name (concat varan-root-directory "core/")))
-
-(defvar varan-templates-directory
-  (expand-file-name (concat varan-root-directory "templates/")))
-
-(defvar varan-user-directory
-  (expand-file-name (concat varan-root-directory "user/")))
+;; Load bootstrap file
+(load (concat (file-name-directory load-file-name)
+              "core/varan-bootstrap"))
 
 ;; Load core module
 (add-to-list 'load-path varan-core-directory)
