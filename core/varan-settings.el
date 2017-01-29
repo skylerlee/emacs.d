@@ -10,6 +10,6 @@
 ;; Load setting files
 (mapc (lambda (name)
         (load (file-name-sans-extension name)))
-      (directory-files varan-settings-directory t "\\.el"))
+      (directory-files varan-settings-directory t "\\.el\\'"))
 
 (provide 'varan-settings)
