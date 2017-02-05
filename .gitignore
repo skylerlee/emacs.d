@@ -13,3 +13,6 @@ elpa
 # User files
 user/*
 !user/.gitkeep
+
+# History data
+smex-items
