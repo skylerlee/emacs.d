@@ -6,6 +6,4 @@
   :bind
   ("M-x" . counsel-M-x))
 
-(use-package smex
-  :bind
-  ("M-X" . smex-major-mode-commands))
+(use-package smex)
