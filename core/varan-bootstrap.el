@@ -22,3 +22,10 @@
 
 (defvar varan-user-directory
   (expand-file-name (concat varan-root-directory "user/")))
+
+;; Create necessary directories
+(unless (file-exists-p varan-cache-directory)
+  (make-directory varan-cache-directory))
+
+(unless (file-exists-p varan-user-directory)
+  (make-directory varan-user-directory))
