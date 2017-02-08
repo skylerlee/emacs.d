@@ -8,6 +8,9 @@
   (expand-file-name user-emacs-directory))
 
 ;; Define top level directories
+(defvar varan-cache-directory
+  (expand-file-name (concat varan-root-directory "cache/")))
+
 (defvar varan-core-directory
   (expand-file-name (concat varan-root-directory "core/")))
 

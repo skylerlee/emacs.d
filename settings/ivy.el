@@ -2,11 +2,14 @@
   :config
   (ivy-mode 1))
 
+(use-package smex
+  :init
+  (setq smex-history-length 16
+        smex-save-file (concat varan-cache-directory ".smex-items")))
+
 (use-package counsel
   :bind
   ("M-x" . counsel-M-x))
-
-(use-package smex)
 
 (use-package swiper
   :bind
