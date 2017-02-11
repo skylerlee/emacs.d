@@ -1,4 +1,4 @@
-;;; varan-user.el -- emacs user file configurations
+;;; varan-custom.el -- emacs custom file configurations
 ;;
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
@@ -11,4 +11,4 @@
    (expand-file-name (concat varan-templates-directory "custom.el"))
    custom-file))
 
-(provide 'varan-user)
+(provide 'varan-custom)
