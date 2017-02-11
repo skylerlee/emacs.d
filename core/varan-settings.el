@@ -1,7 +1,13 @@
-;;; varan-settings.el -- emacs setting files configurations
+;;; varan-settings.el -- emacs package setting configurations
 ;;
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
+
+;; Initialize package manager
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
 
 ;; Check requirements
 (unless (package-installed-p 'use-package)
