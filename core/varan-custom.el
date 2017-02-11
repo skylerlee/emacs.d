@@ -3,6 +3,10 @@
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
 
+;; Define custom themes location
+(add-to-list 'custom-theme-load-path varan-themes-directory)
+(setq custom-theme-directory varan-user-directory)
+
 ;; Define custom file location
 (setq custom-file
       (expand-file-name (concat varan-user-directory "custom.el")))

@@ -20,6 +20,9 @@
 (defvar varan-templates-directory
   (expand-file-name (concat varan-root-directory "templates/")))
 
+(defvar varan-themes-directory
+  (expand-file-name (concat varan-root-directory "themes/")))
+
 (defvar varan-user-directory
   (expand-file-name (concat varan-root-directory "user/")))
 
