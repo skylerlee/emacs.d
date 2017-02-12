@@ -5,6 +5,7 @@
 
 ;; Define custom themes location
 (add-to-list 'custom-theme-load-path varan-themes-directory)
+(add-to-list 'load-path varan-themes-directory)
 (setq custom-theme-directory varan-user-directory)
 
 ;; Define custom file location
