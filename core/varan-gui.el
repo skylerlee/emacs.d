@@ -12,4 +12,8 @@
 ;; Turn off the bell
 (setq ring-bell-function 'ignore)
 
+;; Change splash image
+(setq fancy-splash-image
+      (expand-file-name (concat varan-statics-directory "varan.png")))
+
 (provide 'varan-gui)
