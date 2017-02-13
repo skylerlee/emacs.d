@@ -9,7 +9,9 @@
 
 (use-package counsel
   :bind
-  ("M-x" . counsel-M-x))
+  ("M-x" . counsel-M-x)
+  :config
+  (counsel-mode 1))
 
 (use-package swiper
   :bind

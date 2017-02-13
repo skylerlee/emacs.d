@@ -1,5 +1,5 @@
 (use-package diff-hl
   :init
-  (global-diff-hl-mode)
-  :config
-  (add-hook 'dired-mode-hook 'diff-hl-dired-mode))
+  (progn
+    (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+    (global-diff-hl-mode)))

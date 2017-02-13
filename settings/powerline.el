@@ -1,3 +1,3 @@
 (use-package powerline
-  :config
+  :init
   (powerline-default-theme))
