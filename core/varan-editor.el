@@ -10,6 +10,7 @@
 ;; Tweak editor appearance
 (setq-default cursor-type 'bar)
 (add-hook 'prog-mode-hook 'hl-line-mode)
+(add-hook 'text-mode-hook 'hl-line-mode)
 
 ;; Tweak editing behavior
 (setq backup-directory-alist
