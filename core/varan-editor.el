@@ -14,9 +14,9 @@
 
 ;; Tweak editing behavior
 (setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+      `((".*" . ,varan-cache-directory))
+      auto-save-file-name-transforms
+      `((".*" ,varan-cache-directory t)))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
