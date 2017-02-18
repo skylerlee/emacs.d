@@ -9,8 +9,11 @@
 ;; Disable the toolbar
 (tool-bar-mode -1)
 
-;; Turn off the bell
+;; Turn off ring bell
 (setq ring-bell-function 'ignore)
+
+;; Show text pointer
+(setq void-text-area-pointer 'text)
 
 ;; Change splash image
 (setq fancy-splash-image
