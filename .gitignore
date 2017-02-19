@@ -10,7 +10,7 @@ elpa
 # Packaging
 .cask
 
-# Cache
+# Cache files
 cache
 
 # User files
