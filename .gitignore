@@ -14,5 +14,4 @@ elpa
 cache
 
 # User files
-user/*
-!user/.gitkeep
+user

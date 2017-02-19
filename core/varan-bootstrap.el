@@ -32,3 +32,6 @@
 ;; Create necessary directories
 (unless (file-exists-p varan-cache-directory)
   (make-directory varan-cache-directory))
+
+(unless (file-exists-p varan-user-directory)
+  (make-directory varan-user-directory))
