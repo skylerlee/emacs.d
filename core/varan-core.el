@@ -5,6 +5,7 @@
 
 (require 'varan-gui)
 (require 'varan-editor)
+(require 'varan-common)
 (require 'varan-settings)
 (require 'varan-custom)
 
