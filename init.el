@@ -17,11 +17,7 @@
 
 ;; Load bootstrap file
 (load (concat (file-name-directory load-file-name)
-              "core/varan-bootstrap"))
-
-;; Load core module
-(add-to-list 'load-path varan-core-directory)
-(require 'varan-core)
+              "core/bootstrap"))
 
 ;; Load user custom file
 (load custom-file)
