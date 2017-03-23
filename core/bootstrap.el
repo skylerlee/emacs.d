@@ -7,13 +7,13 @@
 
 (require 'varan-common)
 
-(varan|define-directory "cache" "Directory storing cache files.")
+(varan|define-directory "cache" "Directory storing cache files." :ensure t)
 (varan|define-directory "statics" "Directory storing static files.")
 (varan|define-directory "templates" "Directory storing template files.")
 
 (varan|define-directory "settings")
 (varan|define-directory "themes")
-(varan|define-directory "user")
+(varan|define-directory "user" "Directory storing user data." :ensure t)
 
 (require 'varan-gui)
 (require 'varan-editor)
