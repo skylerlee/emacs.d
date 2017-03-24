@@ -16,7 +16,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (let ((backup-dir
-       (expand-file-name (concat varan-cache-directory "backups/"))))
+       (file-name-as-directory (concat varan-cache-directory "backups"))))
   (setq auto-save-list-file-prefix (concat backup-dir ".saves-")
         auto-save-file-name-transforms `((".*" ,backup-dir t))
         backup-directory-alist `((".*" . ,backup-dir))))

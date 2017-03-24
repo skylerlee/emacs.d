@@ -16,7 +16,6 @@
 (setq void-text-area-pointer 'text)
 
 ;; Change splash image
-(setq fancy-splash-image
-      (expand-file-name (concat varan-statics-directory "varan.png")))
+(setq fancy-splash-image (concat varan-statics-directory "varan.png"))
 
 (provide 'varan-gui)
