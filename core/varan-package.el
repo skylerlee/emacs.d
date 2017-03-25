@@ -1,4 +1,4 @@
-;;; varan-settings.el -- emacs package setting configurations
+;;; varan-package.el -- emacs package management
 ;;
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
@@ -18,4 +18,4 @@
         (load (file-name-sans-extension name)))
       (directory-files varan-settings-directory t "\\.el\\'"))
 
-(provide 'varan-settings)
+(provide 'varan-package)
