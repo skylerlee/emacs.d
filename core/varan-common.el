@@ -3,6 +3,10 @@
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
 
+(defun varan/subdirectory (name)
+  "Path of the NAME subdirectory in `user-emacs-directory'."
+  (file-name-as-directory (concat user-emacs-directory name)))
+
 (defmacro varan|define-directory (name &optional docstring &rest args)
   "Define a variable named `varan-NAME-directory'.
 The value is the path of subdirectory in `user-emacs-directory' with the
@@ -11,7 +15,7 @@ corresponding name."
     (push docstring args)
     (setq docstring nil))
   (let ((dir (intern (format "varan-%s-directory" name)))
-        (path (file-name-as-directory (concat user-emacs-directory name))))
+        (path (varan/subdirectory name)))
     (varan//defdir-process-keywords path args)
     `(defvar ,dir ,path ,docstring)))
 
