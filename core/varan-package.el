@@ -13,9 +13,10 @@
 (unless (package-installed-p 'use-package)
   (error "Missing required package: use-package. Please install."))
 
-;; Load setting files
-(mapc (lambda (name)
-        (load (file-name-sans-extension name)))
-      (directory-files varan-settings-directory t "\\.el\\'"))
+;; Load package modules
+(let ((modules '("services" "settings"))
+      (load-module (lambda (name)
+                     (load (concat (varan/subdirectory name) "index")))))
+  (mapc load-module modules))
 
 (provide 'varan-package)
