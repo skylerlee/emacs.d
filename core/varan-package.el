@@ -16,7 +16,8 @@
 ;; Load package modules
 (let ((modules '("services" "settings"))
       (load-module (lambda (name)
-                     (load (concat (varan/subdirectory name) "index")))))
+                     (load (concat (varan/subdirectory name) "index")
+                           nil t))))
   (mapc load-module modules))
 
 (provide 'varan-package)
