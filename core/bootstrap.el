@@ -14,6 +14,5 @@
 
 (require 'varan-gui)
 (require 'varan-editor)
-(require 'varan-keybinding)
 (require 'varan-package)
 (require 'varan-user)
