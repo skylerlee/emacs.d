@@ -40,4 +40,17 @@ corresponding name."
     (unless (file-exists-p path)
       (make-directory path))))
 
+(defun varan//element-as-list (element)
+  (if (listp element) element
+    (list element)))
+
+(defun varan/load-code (file-or-list)
+  "Load Lisp code relative to the file that is currently loaded.
+FILE-OR-LIST is either a symbol or a list of symbols with the
+same name as the Lisp file to load."
+  (mapc (lambda (file)
+          (load (concat (file-name-directory load-file-name)
+                        (symbol-name file))))
+        (varan//element-as-list file-or-list)))
+
 (provide 'varan-common)
