@@ -44,6 +44,16 @@ corresponding name."
   (if (listp element) element
     (list element)))
 
+(defun varan/autoload (function-or-list
+                       file
+                       &optional docstring interactive type)
+  "Define an autoload function that is contained in FILE.
+FUNCTION-OR-LIST is either a symbol or a list of symbols of the
+autoload function; FILE is the file name to pass to `load'."
+  (mapc (lambda (func)
+          (autoload func file docstring interactive type))
+        (varan//element-as-list function-or-list)))
+
 (defun varan/load-code (file-or-list)
   "Load Lisp code relative to the file that is currently loaded.
 FILE-OR-LIST is either a symbol or a list of symbols with the
