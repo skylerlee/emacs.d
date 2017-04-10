@@ -1,4 +1,8 @@
 (use-package ivy
+  :init
+  (setq ivy-re-builders-alist
+        '((counsel-M-x . ivy--regex-fuzzy)
+          (t . ivy--regex-plus)))
   :config
   (ivy-mode 1))
 
