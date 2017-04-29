@@ -5,8 +5,6 @@
 
 (require 'powerline)
 
-(setq powerline-default-separator 'slant)
-
 (defalias
   'varan//pl-sep-left
   (symbol-function (intern (format "powerline-%s-%s"
