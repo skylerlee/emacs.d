@@ -1,4 +1,4 @@
-;;; varan-modeline.el -- emacs modeline extension
+;;; varan-powerline.el -- emacs powerline service
 ;;
 ;; Copyright (C) 2016, Skyler.
 ;; MIT License.
