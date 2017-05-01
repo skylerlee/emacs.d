@@ -17,12 +17,24 @@
                                    (powerline-current-separator)
                                    (cdr powerline-default-separator-dir)))))
 
+(defun varan//pl-integrate-main ()
+  `(let* ((active (powerline-selected-window-active))
+          (inner (if active 'mode-line 'mode-line-inactive))
+          (title (if active 'mode-line-buffer-id 'mode-line-buffer-id-inactive))
+          (outer (if active 'powerline-active1 'powerline-inactive1))
+          (blank (if active 'powerline-active2 'powerline-inactive2))
+          (lhs (list
+                (powerline-raw "%*" inner 'l)))
+          (rhs (list
+                (powerline-raw "--" inner 'r))))
+     (concat (powerline-render lhs)
+             (powerline-fill blank (powerline-width rhs))
+             (powerline-render rhs))))
+
 ;;;###autoload
 (defun varan/powerline-theme ()
   (interactive)
   (setq-default mode-line-format
-                '("%e"
-                  (:eval
-                   (list "--")))))
+                `("%e" (:eval ,(varan//pl-integrate-main)))))
 
 (provide 'varan-powerline)
