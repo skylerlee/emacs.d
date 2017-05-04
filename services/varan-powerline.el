@@ -6,13 +6,13 @@
 (require 'powerline)
 
 (defalias
-  'varan//pl-sep-left
+  'varan//pl-sepl
   (symbol-function (intern (format "powerline-%s-%s"
                                    (powerline-current-separator)
                                    (car powerline-default-separator-dir)))))
 
 (defalias
-  'varan//pl-sep-right
+  'varan//pl-sepr
   (symbol-function (intern (format "powerline-%s-%s"
                                    (powerline-current-separator)
                                    (cdr powerline-default-separator-dir)))))
