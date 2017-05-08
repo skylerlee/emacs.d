@@ -17,6 +17,12 @@
                                    (powerline-current-separator)
                                    (cdr powerline-default-separator-dir)))))
 
+;; Define powerline fragments
+(defun varan//pl-frag-buffer-info ()
+  '((powerline-buffer-id title)
+    (powerline-raw (if (buffer-modified-p) "+" " ") title)
+    (varan//pl-sepl inner outer)))
+
 (defun varan//pl-integrate-main ()
   `(let* ((active (powerline-selected-window-active))
           (inner (if active 'mode-line 'mode-line-inactive))
