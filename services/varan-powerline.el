@@ -23,16 +23,26 @@
     (powerline-raw (if (buffer-modified-p) "+" " ") title)
     (varan//pl-sepl inner outer)))
 
+(defun varan//pl-frag-cursor-position ()
+  '((varan//pl-sepr outer inner)
+    (powerline-raw (let* ((pm (point-max))
+                          (ws (window-start))
+                          (percent (/ (* 100.0 ws) pm)))
+                     (format " %d" percent))
+                   inner)
+    (powerline-raw "%% ")
+    (powerline-raw "%l:%c" inner 'r)))
+
 (defun varan//pl-integrate-main ()
   `(let* ((active (powerline-selected-window-active))
           (inner (if active 'mode-line 'mode-line-inactive))
           (title (if active 'mode-line-buffer-id 'mode-line-buffer-id-inactive))
           (outer (if active 'powerline-active1 'powerline-inactive1))
           (blank (if active 'powerline-active2 'powerline-inactive2))
-          (lhs (list
-                (powerline-raw "%*" inner 'l)))
-          (rhs (list
-                (powerline-raw "--" inner 'r))))
+          (lhs ,(cons 'list
+                      (append (varan//pl-frag-buffer-info))))
+          (rhs ,(cons 'list
+                      (append (varan//pl-frag-cursor-position)))))
      (concat (powerline-render lhs)
              (powerline-fill blank (powerline-width rhs))
              (powerline-render rhs))))
