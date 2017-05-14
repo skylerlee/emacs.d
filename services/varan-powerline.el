@@ -28,9 +28,8 @@
     (powerline-raw (let* ((pm (point-max))
                           (ws (window-start))
                           (percent (/ (* 100.0 ws) pm)))
-                     (format " %d" percent))
+                     (format " %d%s " percent "%%"))
                    inner)
-    (powerline-raw "%% ")
     (powerline-raw "%l:%c" inner 'r)))
 
 (defun varan//pl-integrate-main ()
