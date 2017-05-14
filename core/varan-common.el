@@ -40,7 +40,7 @@ corresponding name."
     (unless (file-exists-p path)
       (make-directory path))))
 
-(defun varan//element-as-list (element)
+(defun varan//assure-list (element)
   (if (listp element) element
     (list element)))
 
@@ -52,7 +52,7 @@ FUNCTION-OR-LIST is either a symbol or a list of symbols of the
 autoload function; FILE is the file name to pass to `load'."
   (mapc (lambda (func)
           (autoload func file docstring interactive type))
-        (varan//element-as-list function-or-list)))
+        (varan//assure-list function-or-list)))
 
 (defun varan/load-code (file-or-list)
   "Load Lisp code relative to the file that is currently loaded.
@@ -61,6 +61,6 @@ same name as the Lisp file to load."
   (mapc (lambda (file)
           (load (concat (file-name-directory load-file-name)
                         (symbol-name file))))
-        (varan//element-as-list file-or-list)))
+        (varan//assure-list file-or-list)))
 
 (provide 'varan-common)
