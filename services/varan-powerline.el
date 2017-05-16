@@ -23,6 +23,18 @@
     (powerline-raw (if (buffer-modified-p) "+" " ") title)
     (varan//pl-sepl inner outer)))
 
+(defun varan//pl-frag-buffer-extra-info ()
+  '((varan//pl-sepr blank outer)
+    (powerline-raw (let* ((coding buffer-file-coding-system)
+                          (base (coding-system-base coding))
+                          (type (coding-system-eol-type coding))
+                          (endl (cond ((= type 0) "LF")
+                                      ((= type 1) "CRLF")
+                                      ((= type 2) "CR")
+                                      (t "--"))))
+                     (format " %s/%s " base endl))
+                   outer)))
+
 (defun varan//pl-frag-cursor-position ()
   '((varan//pl-sepr outer inner)
     (powerline-raw (let* ((pm (point-max))
@@ -41,7 +53,8 @@
           (lhs ,(cons 'list
                       (append (varan//pl-frag-buffer-info))))
           (rhs ,(cons 'list
-                      (append (varan//pl-frag-cursor-position)))))
+                      (append (varan//pl-frag-buffer-extra-info)
+                              (varan//pl-frag-cursor-position)))))
      (concat (powerline-render lhs)
              (powerline-fill blank (powerline-width rhs))
              (powerline-render rhs))))
