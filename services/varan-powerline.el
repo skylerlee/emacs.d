@@ -23,6 +23,10 @@
     (powerline-raw (if (buffer-modified-p) "+" " ") title)
     (varan//pl-sepl inner outer)))
 
+(defun varan//pl-frag-version-control ()
+  '((powerline-vc outer 'r)
+    (varan//pl-sepl outer blank)))
+
 (defun varan//pl-frag-buffer-extra-info ()
   '((varan//pl-sepr blank outer)
     (powerline-raw (let* ((coding buffer-file-coding-system)
@@ -51,7 +55,8 @@
           (outer (if active 'powerline-active1 'powerline-inactive1))
           (blank (if active 'powerline-active2 'powerline-inactive2))
           (lhs ,(cons 'list
-                      (append (varan//pl-frag-buffer-info))))
+                      (append (varan//pl-frag-buffer-info)
+                              (varan//pl-frag-version-control))))
           (rhs ,(cons 'list
                       (append (varan//pl-frag-buffer-extra-info)
                               (varan//pl-frag-cursor-position)))))
