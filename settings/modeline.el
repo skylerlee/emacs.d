@@ -1,3 +1,3 @@
 (use-package powerline
   :config
-  (powerline-default-theme))
+  (varan/powerline-theme))
