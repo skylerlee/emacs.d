@@ -32,6 +32,10 @@
   '((powerline-vc outer 'r)
     (varan//pl-sepl outer blank)))
 
+(defun varan//pl-frag-nyan-mode ()
+  '((when (bound-and-true-p nyan-mode)
+      (powerline-raw (format " %s|" (nyan-create)) faded))))
+
 (defun varan//pl-frag-buffer-extra-info ()
   '((varan//pl-sepr blank outer)
     (powerline-raw (let* ((coding buffer-file-coding-system)
@@ -59,9 +63,11 @@
           (title (if active 'mode-line-buffer-id 'mode-line-buffer-id-inactive))
           (outer (if active 'powerline-active1 'powerline-inactive1))
           (blank (if active 'powerline-active2 'powerline-inactive2))
+          (faded 'varan-powerline-faded)
           (lhs ,(cons 'list
                       (append (varan//pl-frag-buffer-info)
-                              (varan//pl-frag-version-control))))
+                              (varan//pl-frag-version-control)
+                              (varan//pl-frag-nyan-mode))))
           (rhs ,(cons 'list
                       (append (varan//pl-frag-buffer-extra-info)
                               (varan//pl-frag-cursor-position)))))
