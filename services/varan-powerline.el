@@ -5,6 +5,11 @@
 
 (require 'powerline)
 
+(defface varan-powerline-faded
+  '((t (:foreground "grey40" :inherit powerline-active2)))
+  "Powerline faded face."
+  :group 'varan-powerline)
+
 (defalias
   'varan//pl-sepl
   (symbol-function (intern (format "powerline-%s-%s"
