@@ -3,8 +3,7 @@
   (setq ivy-re-builders-alist
         '((counsel-M-x . ivy--regex-fuzzy)
           (t . ivy--regex-plus)))
-  :config
-  (ivy-mode 1))
+  (add-hook 'after-init-hook 'ivy-mode))
 
 (use-package smex
   :init
@@ -14,8 +13,8 @@
 (use-package counsel
   :bind
   ("M-x" . counsel-M-x)
-  :config
-  (counsel-mode 1))
+  :init
+  (add-hook 'after-init-hook 'counsel-mode))
 
 (use-package swiper
   :bind
