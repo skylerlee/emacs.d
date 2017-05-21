@@ -36,6 +36,10 @@
   '((when (bound-and-true-p nyan-mode)
       (powerline-raw (format " %s|" (nyan-create)) faded))))
 
+(defun varan//pl-frag-message-bar ()
+  '((powerline-process faded 'r)
+    (powerline-narrow faded 'r)))
+
 (defun varan//pl-frag-editor-mode ()
   '((powerline-major-mode blank 'r)
     (powerline-minor-modes blank 'r)))
@@ -76,7 +80,8 @@
                               (varan//pl-frag-version-control)
                               (varan//pl-frag-nyan-mode))))
           (rhs ,(cons 'list
-                      (append (varan//pl-frag-editor-mode)
+                      (append (varan//pl-frag-message-bar)
+                              (varan//pl-frag-editor-mode)
                               (varan//pl-frag-buffer-extra-info)
                               (varan//pl-frag-cursor-position)))))
      (concat (powerline-render lhs)
