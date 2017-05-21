@@ -11,11 +11,12 @@
         smex-save-file (concat varan-cache-directory ".smex-items")))
 
 (use-package counsel
-  :bind
-  ("M-x" . counsel-M-x)
+  :bind (("M-x" . counsel-M-x)
+         :map ivy-minibuffer-map
+         ("<right>" . ivy-alt-done)
+         ("<escape>" . minibuffer-keyboard-quit))
   :init
   (add-hook 'after-init-hook 'counsel-mode))
 
 (use-package swiper
-  :bind
-  ("C-s" . swiper))
+  :bind ("C-s" . swiper))
