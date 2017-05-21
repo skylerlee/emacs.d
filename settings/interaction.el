@@ -1,4 +1,5 @@
 (use-package ivy
+  :diminish ivy-mode
   :init
   (setq ivy-re-builders-alist
         '((counsel-M-x . ivy--regex-fuzzy)
@@ -11,6 +12,7 @@
         smex-save-file (concat varan-cache-directory ".smex-items")))
 
 (use-package counsel
+  :diminish counsel-mode
   :bind (("M-x" . counsel-M-x)
          :map ivy-minibuffer-map
          ("<right>" . ivy-alt-done)
