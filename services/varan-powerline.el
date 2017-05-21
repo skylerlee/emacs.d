@@ -36,6 +36,10 @@
   '((when (bound-and-true-p nyan-mode)
       (powerline-raw (format " %s|" (nyan-create)) faded))))
 
+(defun varan//pl-frag-editor-mode ()
+  '((powerline-major-mode blank 'r)
+    (powerline-minor-modes blank 'r)))
+
 (defun varan//pl-frag-buffer-extra-info ()
   '((varan//pl-sepr blank outer)
     (powerline-raw (let* ((coding buffer-file-coding-system)
@@ -72,7 +76,8 @@
                               (varan//pl-frag-version-control)
                               (varan//pl-frag-nyan-mode))))
           (rhs ,(cons 'list
-                      (append (varan//pl-frag-buffer-extra-info)
+                      (append (varan//pl-frag-editor-mode)
+                              (varan//pl-frag-buffer-extra-info)
                               (varan//pl-frag-cursor-position)))))
      (concat (powerline-render lhs)
              (powerline-fill blank (powerline-width rhs))
