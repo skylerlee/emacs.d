@@ -22,6 +22,12 @@
                                    (powerline-current-separator)
                                    (cdr powerline-default-separator-dir)))))
 
+(defmacro varan|define-fragment (name &rest body)
+  `(defun ,name ()
+     (quote ,body)))
+
+(put 'varan|define-fragment 'lisp-indent-function 'defun)
+
 ;; Define powerline fragments
 (defun varan//pl-frag-buffer-info ()
   '((powerline-buffer-id title)
