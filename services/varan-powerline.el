@@ -11,13 +11,13 @@
   :group 'varan-powerline)
 
 (defalias
-  'varan//pl-sepl
+  'powerline-sepl
   (symbol-function (intern (format "powerline-%s-%s"
                                    (powerline-current-separator)
                                    (car powerline-default-separator-dir)))))
 
 (defalias
-  'varan//pl-sepr
+  'powerline-sepr
   (symbol-function (intern (format "powerline-%s-%s"
                                    (powerline-current-separator)
                                    (cdr powerline-default-separator-dir)))))
@@ -32,11 +32,11 @@
 (varan|define-fragment varan-pl-buffer-info
   (powerline-buffer-id title)
   (powerline-raw (if (buffer-modified-p) "+" " ") title)
-  (varan//pl-sepl inner outer))
+  (powerline-sepl inner outer))
 
 (varan|define-fragment varan-pl-version-control
   (powerline-vc outer 'r)
-  (varan//pl-sepl outer blank))
+  (powerline-sepl outer blank))
 
 (varan|define-fragment varan-pl-nyan-mode
   (when (bound-and-true-p nyan-mode)
@@ -51,7 +51,7 @@
   (powerline-minor-modes blank 'r))
 
 (varan|define-fragment varan-pl-buffer-extra-info
-  (varan//pl-sepr blank outer)
+  (powerline-sepr blank outer)
   (powerline-raw (let* ((coding buffer-file-coding-system)
                         (base (coding-system-base coding))
                         (cate (coding-system-category coding))
@@ -66,7 +66,7 @@
                  outer))
 
 (varan|define-fragment varan-pl-cursor-position
-  (varan//pl-sepr outer inner)
+  (powerline-sepr outer inner)
   (powerline-raw (let* ((pm (point-max))
                         (ws (window-start))
                         (percent (/ (* 100.0 ws) pm)))
