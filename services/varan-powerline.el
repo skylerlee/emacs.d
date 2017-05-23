@@ -28,6 +28,10 @@
 
 (put 'varan|define-fragment 'lisp-indent-function 'defun)
 
+(defun varan//join-fragments (frags)
+  (cons 'list
+        (apply 'append (mapcar 'funcall frags))))
+
 ;; Define powerline fragments
 (varan|define-fragment varan-pl-buffer-info
   (powerline-buffer-id title)
@@ -74,6 +78,19 @@
                  inner)
   (powerline-raw "%l:%c" inner 'r))
 
+;; Define powerline left hand side
+(defvar varan-pl-lhs
+  '(varan-pl-buffer-info
+    varan-pl-version-control
+    varan-pl-nyan-mode))
+
+;; Define powerline right hand side
+(defvar varan-pl-rhs
+  '(varan-pl-message
+    varan-pl-editor-mode
+    varan-pl-buffer-extra-info
+    varan-pl-cursor-position))
+
 (defun varan//pl-integrate-main ()
   `(let* ((active (powerline-selected-window-active))
           (inner (if active 'mode-line 'mode-line-inactive))
@@ -81,15 +98,8 @@
           (outer (if active 'powerline-active1 'powerline-inactive1))
           (blank (if active 'powerline-active2 'powerline-inactive2))
           (faded 'varan-powerline-faded)
-          (lhs ,(cons 'list
-                      (append (varan-pl-buffer-info)
-                              (varan-pl-version-control)
-                              (varan-pl-nyan-mode))))
-          (rhs ,(cons 'list
-                      (append (varan-pl-message)
-                              (varan-pl-editor-mode)
-                              (varan-pl-buffer-extra-info)
-                              (varan-pl-cursor-position)))))
+          (lhs ,(varan//join-fragments varan-pl-lhs))
+          (rhs ,(varan//join-fragments varan-pl-rhs)))
      (concat (powerline-render lhs)
              (powerline-fill blank (powerline-width rhs))
              (powerline-render rhs))))
