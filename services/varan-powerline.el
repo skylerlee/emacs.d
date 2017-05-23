@@ -22,9 +22,14 @@
                                    (powerline-current-separator)
                                    (cdr powerline-default-separator-dir)))))
 
-(defmacro varan|define-fragment (name &rest body)
+;; Define powerline core utilities
+(defmacro varan|define-fragment (name &rest segs)
+  "Define a fragment function with NAME.
+The fragment function takes no arguments and returns a quoted list.
+The elements of the result list are the forms of SEGS without evaluating."
   `(defun ,name ()
-     (quote ,body)))
+     "Powerline fragment function."
+     (quote ,segs)))
 
 (put 'varan|define-fragment 'lisp-indent-function 'defun)
 
