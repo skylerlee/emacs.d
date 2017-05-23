@@ -28,7 +28,7 @@
 
 (put 'varan|define-fragment 'lisp-indent-function 'defun)
 
-(defun varan//join-fragments (frags)
+(defun varan//pl-join-fragments (frags)
   (cons 'list
         (apply 'append (mapcar 'funcall frags))))
 
@@ -98,8 +98,8 @@
           (outer (if active 'powerline-active1 'powerline-inactive1))
           (blank (if active 'powerline-active2 'powerline-inactive2))
           (faded 'varan-powerline-faded)
-          (lhs ,(varan//join-fragments varan-pl-lhs))
-          (rhs ,(varan//join-fragments varan-pl-rhs)))
+          (lhs ,(varan//pl-join-fragments varan-pl-lhs))
+          (rhs ,(varan//pl-join-fragments varan-pl-rhs)))
      (concat (powerline-render lhs)
              (powerline-fill blank (powerline-width rhs))
              (powerline-render rhs))))
