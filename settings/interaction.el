@@ -1,5 +1,8 @@
 (use-package ivy
   :diminish ivy-mode
+  :bind (:map ivy-minibuffer-map
+              ("<escape>" . minibuffer-keyboard-quit)
+              ("<right>" . ivy-alt-done))
   :init
   (setq ivy-re-builders-alist
         '((counsel-M-x . ivy--regex-fuzzy)
@@ -13,10 +16,7 @@
 
 (use-package counsel
   :diminish counsel-mode
-  :bind (("M-x" . counsel-M-x)
-         :map ivy-minibuffer-map
-         ("<right>" . ivy-alt-done)
-         ("<escape>" . minibuffer-keyboard-quit))
+  :bind ("M-x" . counsel-M-x)
   :init
   (add-hook 'after-init-hook 'counsel-mode))
 
