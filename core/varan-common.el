@@ -19,6 +19,18 @@ corresponding name."
     (varan//defdir-process-keywords path args)
     `(defvar ,dir ,path ,docstring)))
 
+(defun varan/parse-keywords (kwlist)
+  (let (key val result)
+    (while kwlist
+      (setq key (pop kwlist)
+            val (pop kwlist))
+      (unless (keywordp key)
+        (varan/error "Keyword argument expected"))
+      (when (keywordp val)
+        (varan/error "Value argument expected"))
+      (push (cons key val) result))
+    (reverse result)))
+
 (defsubst varan/error (msg &rest args)
   (error (concat "varan: " (apply #'format msg args))))
 
