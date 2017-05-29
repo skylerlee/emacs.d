@@ -15,8 +15,12 @@ corresponding name."
     (push docstring args)
     (setq docstring nil))
   (let ((dir (intern (format "varan-%s-directory" name)))
-        (path (varan/subdirectory name)))
-    (varan//defdir-process-keywords path args)
+        (path (varan/subdirectory name))
+        (kwargs (varan/parse-keywords args)))
+    (when (alist-get :hidden kwargs)
+      (setq path (varan/subdirectory (concat "." name))))
+    (when (alist-get :ensure kwargs)
+      (unless (file-exists-p path) (make-directory path)))
     `(defvar ,dir ,path ,docstring)))
 
 (defun varan/parse-keywords (kwlist)
@@ -33,24 +37,6 @@ corresponding name."
 
 (defsubst varan/error (msg &rest args)
   (error (concat "varan: " (apply #'format msg args))))
-
-(defun varan//defdir-process-keywords (path kwlist)
-  (let (key val keyname subfunc)
-    (while kwlist
-      (setq key (pop kwlist)
-            val (pop kwlist))
-      (unless (keywordp key)
-        (varan/error "Keyword argument expected"))
-      (setq keyname (symbol-name key)
-            subfunc (intern (format "varan//defdir-subfunc/%s" keyname)))
-      (unless (functionp subfunc)
-        (varan/error "Unknown keyword: %s" keyname))
-      (funcall subfunc path val))))
-
-(defun varan//defdir-subfunc/:ensure (path val)
-  (when val
-    (unless (file-exists-p path)
-      (make-directory path))))
 
 (defun varan//assure-list (element)
   (if (listp element) element
