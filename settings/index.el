@@ -6,6 +6,7 @@
 (defvar varan-active-settings
   '(completion
     interaction
+    snippet
     surround
     linter
     filetree
