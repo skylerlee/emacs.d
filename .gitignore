@@ -11,7 +11,7 @@ elpa
 .cask
 
 # Cache files
-cache
+.cache
 
 # User files
 user
