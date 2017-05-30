@@ -6,6 +6,7 @@
 (defvar varan-active-settings
   '(completion
     interaction
+    surround
     linter
     filetree
     modeline
