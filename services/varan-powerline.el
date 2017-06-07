@@ -5,6 +5,10 @@
 
 (require 'powerline)
 
+(defgroup varan-powerline nil
+  "Powerline theme for varan."
+  :group 'varan)
+
 (defface varan-powerline-faded
   '((t (:foreground "grey40" :inherit powerline-active2)))
   "Powerline faded face."
