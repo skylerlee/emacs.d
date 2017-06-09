@@ -7,7 +7,7 @@
   '(completion
     interaction
     snippet
-    surround
+    enclosure
     linter
     filetree
     modeline
