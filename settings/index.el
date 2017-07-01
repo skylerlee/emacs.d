@@ -4,7 +4,8 @@
 ;; MIT License.
 
 (defvar varan-active-settings
-  '(completion
+  '(keybinding
+    completion
     interaction
     snippet
     enclosure
