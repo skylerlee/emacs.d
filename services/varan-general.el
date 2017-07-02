@@ -6,6 +6,7 @@
 (require 'general)
 (require 'use-package)
 
+;; Extend use-package with `:bind-general' keyword
 (add-to-list 'use-package-keywords :bind-general t)
 
 (defun use-package-normalize/:bind-general (name keyword args)
