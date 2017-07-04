@@ -6,13 +6,16 @@
 (require 'general)
 (require 'use-package)
 
-;; Extend use-package with `:bind-general' keyword
-(add-to-list 'use-package-keywords :bind-general t)
+(defmacro varan-general//bind-keys (_ package &rest args)
+  '(ignore))
 
-(defun use-package-normalize/:bind-general (name keyword args)
+;; Extend use-package with `:general' keyword
+(add-to-list 'use-package-keywords :general t)
+
+(defun use-package-normalize/:general (name keyword args)
   (use-package-normalize-binder name keyword args))
 
-(defun use-package-handler/:bind-general (name keyword arg rest state)
+(defun use-package-handler/:general (name keyword arg rest state)
   (use-package-handler/:bind name keyword arg rest state
                              'varan-general//bind-keys))
 
